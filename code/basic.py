@@ -177,27 +177,27 @@ map_info={
     '猴子草甸': ['1', 'map_1',],
     '树桩': ['1', 'map_2',],
     '市中心': ['1', 'map_3',],
-    '一二三': ['1', 'map_4',],
-    '废料场': ['1', 'map_5',],
-    '小木屋': ['1', 'map_6',],
+    '道路中间': ['1', 'map_4',],
+    '一二三': ['1', 'map_5',],
+    '废料场': ['1', 'map_6',],
+    '小木屋': ['2', 'map_1',],
+    '度假胜地': ['2', 'map_2',],
+    '溜冰鞋': ['2', 'map_3',],
+    '莲花岛': ['2', 'map_4',],
+    '糖果瀑布': ['2', 'map_5',],
+    '冬季公园': ['2', 'map_6',],
 
-    '度假胜地': ['2', 'map_1',],
-    '溜冰鞋': ['2', 'map_2',],
-    '莲花岛': ['2', 'map_3',],
-    '糖果瀑布': ['2', 'map_4',],
-    '冬季公园': ['2', 'map_5',],
-    '鬼脸南瓜': ['2', 'map_6',],
+    '鬼脸南瓜': ['3', 'map_1',],
+    '公园路径': ['3', 'map_2',],
+    '高山竞速': ['3', 'map_3',],
+    '冰冻三尺': ['3', 'map_4',],
+    '循环': ['3', 'map_5',],
+    '立体主义': ['3', 'map_6',],
 
-    '公园路径': ['3', 'map_1',],
-    '高山竞速': ['3', 'map_2',],
-    '冰冻三尺': ['3', 'map_3',],
-    '循环': ['3', 'map_4',],
-    '立体主义': ['3', 'map_5',],
-    '四个圈子': ['3', 'map_6',],
-
-    '树篱': ['4', 'map_1',],
-    '路的尽头': ['4', 'map_2',],
-    '原木': ['4', 'map_3',],
+    '四个圈子': ['4', 'map_1',],
+    '树篱': ['4', 'map_2',],
+    '路的尽头': ['4', 'map_3',],
+    '原木': ['4', 'map_4',],
 
 
     '隐蔽的花园': ['5', 'map_1',],
@@ -205,13 +205,13 @@ map_info={
     '静谧街道': ['5', 'map_3',],
     '布隆纳留斯精英': ['5', 'map_4',],
     '平衡': ['5', 'map_5',],
-    '已加密': ['5', 'map_4',],
+    '已加密': ['5', 'map_6',],
 
-    '集市': ['6', 'map_6',],
-    '阿拉多神庙': ['6', 'map_6',],
-    '复活节春天': ['6', 'map_6',],
-    '飞镖卡丁车': ['6', 'map_6',],
-    '登月': ['6', 'map_6',],
+    '集市': ['6', 'map_1',],
+    '阿多拉神庙': ['6', 'map_2',],
+    '复活节春天': ['6', 'map_3',],
+    '飞镖卡丁车': ['6', 'map_4',],
+    '登月': ['6', 'map_5',],
     '鬼屋': ['6', 'map_6',],
 
     '顺流而下': ['7', 'map_1',],
@@ -226,8 +226,8 @@ map_info={
     '凹陷的柱子': ['9', 'map_2',],
     'x因子': ['9', 'map_3',],
     '梅萨': ['9', 'map_4',],
-    '齿轮转动': ['9', 'map_5',],
-    '洪泄道': ['9', 'map_6',],
+    '齿轮传动': ['9', 'map_5',],
+    '泄洪道': ['9', 'map_6',],
 
 
     '货运': ['10', 'map_1',],
@@ -240,17 +240,18 @@ map_info={
     '玉米地': ['11', 'map_1',],
     '地下': ['11', 'map_2',],
 
-    '避难所': ['12', 'map_1',],
-    '峡谷': ['12', 'map_2',],
-    '水淹山谷': ['12', 'map_3',],
-    '炼狱': ['12', 'map_4',],
-    '血腥水坑': ['12', 'map_5',],
-    '工坊': ['12', 'map_6',],
-
-    '方院': ['13', 'map_1',],
-    '黑暗城堡': ['13', 'map_2',],
-    '泥泞的水坑': ['13', 'map_3',],
-    '#哎呦': ['13', 'map_4',],
+    '黑暗地下城': ['12', 'map_1',],
+    '避难所': ['12', 'map_2',],
+    '峡谷': ['12', 'map_3',],
+    '水淹山谷': ['12', 'map_4',],
+    '炼狱': ['12', 'map_5',],
+    '血腥水坑': ['12', 'map_6',],
+    
+    '工坊': ['13', 'map_1',],
+    '方院': ['13', 'map_2',],
+    '黑暗城堡': ['13', 'map_3',],
+    '泥泞的水坑': ['13', 'map_4',],
+    '#哎哟': ['13', 'map_5',],
 }
 
 
@@ -427,7 +428,6 @@ sys.path.append(BASE_DIR)
 # curpath = os.path.dirname(os.path.realpath(__file__))
 settings = os.path.join(BASE_DIR, "热键设置.ini")
 # 还需要添加文件不存在时添加配置好的ini文件
-print(settings+"若不存在该文件请找回")  
 # 创建管理对象
 try:
 # 创建管理对象
@@ -533,15 +533,7 @@ def run_thread(function,fucpara='',name='', deamon=True,type="game_thread"):#定
     threadlist[type][var_name(function)].start()
 
 
-# def end_thread(function):#终止线程
-#         try:
-#             thread = queue_infos.get('thread_%s'%var_name(function), '')
-#             if thread != '':
-#                 thread.raise_exception()
 
-#         except Exception as e:
-#             print('[%s]终结线程失败,%s' % (get_datetime(), e))
-#             pass
 def end_thread(function,type="game_thread"):#终止线程
     # while True:
         try:
@@ -632,57 +624,6 @@ def get_datetime():
 def var_name(var,all_var=locals()):
     return [var_name for var_name in all_var if all_var[var_name] is var][0]
 
-# 获取窗口坐标 
-
-# def get_origin(is_init=False):
-#     # 2022-10-24 10:06:56
-#     # 要不然直接在原点坐标上动手脚吧, 不然所有调用坐标的函数都要做 装饰器 处理
-#     global w_h
-#     global origin
-    
-#     while True:
-#         if win32gui.FindWindow(None, "BloonsTD6")==0 and win32gui.FindWindow(None, "BloonsTD6-Epic")==0:
-#             l, t, r, b =0,0,0,0
-#         elif win32gui.FindWindow(None, "BloonsTD6-Epic")!=0:
-#             l, t, r, b = win32gui.GetWindowRect(win32gui.FindWindow(None, "BloonsTD6-Epic"))
-#         else:
-#             l, t, r, b = win32gui.GetWindowRect(win32gui.FindWindow(None, "BloonsTD6"))
-
-
-#         variable_list['width']=r-l-16
-#         if variable_list['width']==1366:#版本1
-#          w_h = [r-l-16, 768]
-#         else:
-#          w_h = [r-l-16, variable_list['width']*9/16]
-#         if variable_list['width']==1366:
-#             coordinates = [l+8, b - 768-8] #之前的坐标都少往左边偏，这是1920*1080 100%缩放
-#         else:
-#             coordinates = [l+8, b - variable_list['width']*9/16-8]
-#         deviation = (int(b) - int(t)) - 768*variable_list['width']/1366
-
-
-#         if coordinates[0] <10 and coordinates[1] < 0:
-#             print('[%s]获取原点坐标失败,可能是窗口最小化,请打开游戏窗口' % get_datetime())
-#             time.sleep(1)
-#             if not is_init:
-#                 break
-
-#         else:
-#             if is_init:
-#                 print('[%s]获取原点坐标成功: %s' % (get_datetime(), coordinates))
-#             else:
-#                 if coordinates[0] != origin[0] or coordinates[1] != origin[1]:
-#                     # print('[%s]检测到窗口移动,更新游戏画面原点坐标: %s, 窗口边框高度: %s' % (get_datetime(), coordinates, int(deviation)))
-#                     print("[%s]检验的游戏画面尺寸为: %s"% (get_datetime(),w_h ),
-#                     # '如果不是1366*768的游戏尺寸,请更换图片或游戏尺寸',
-#                     '如果不是游戏的尺寸，则修改显示器分辨率或者应用缩放'
-#                     )
-
-#             origin.clear()
-#             origin.extend(coordinates)
-    
-#             break
-
 
 
 def get_origin(is_init=False):
@@ -749,31 +690,33 @@ def tranposition(x,y,no_origin=False):#转化坐标单独弄出来，因为不�
         
         refresh_images_path()
         if variable_list['width'] ==1366:
-            x = origin[0] + x
-            y = origin[1] + int(y)#防止去负数时的逆向取整
+            x = origin[0] + round(x)
+            y = origin[1] + round(y)#防止去负数时的逆向取整
         elif variable_list['width'] ==1280:#版本2
-            x = origin[0] + (x*1280/1365) #1280/1364<k<1280/1364
-            y = origin[1] + (y*(720)/770)+1 #750/770<k<720/769
+            x = origin[0] + x*0.938-0.35#0.937<k<0.939 #  小于绝对是对的，大
+            y = origin[1] + y*0.937-0.1#+0.3101#y*0.9374+0.3101#0.9374<k<0.938#y轴不会自动匹配可用点还是0.941偏小 0.941<k<0.943 大 357偏大
         elif variable_list['width'] ==1600:
             # x = origin[0] + ((x-18)*1347/1149)+21 #
-            x = origin[0] + (x*1600/1370)+3  #1600/1369
-            y = origin[1] + int((y)*899/767)
-        return x,y
+            x = origin[0] + (x*1.174)-1  #1600/1369
+            y = origin[1] + (y)*1.173
+        # print(x,y)
+        return round(x),round(y)#x,y
     
     elif no_origin==True:
-        return x,y
+        return round(x),round(y)#x,y
     else:#以x，y为原点
         if variable_list['width'] ==1366:
             x = no_origin[0] + x
             y = no_origin[1] + y
         elif variable_list['width'] ==1280:#版本2
-            x = x + (no_origin[0]*1280/1365) #1280/1364<k<1280/1364
-            y = y + (no_origin[1]*(720)/770)+1 #750/770<k<720/769
+            x = x + (no_origin[0]*1280/1364) #1280/1364<k<1280/1364
+            y = y + (no_origin[1]*(720)/769)+1 #750/770<k<720/769 #偏小
         elif variable_list['width'] ==1600:
             # x = origin[0] + ((x-18)*1347/1149)+21 #
             x = x + (no_origin[0]*1600/1370)+3  #1600/1369
             y = y + (no_origin[1])*899/767
-        return x,y
+            # print(x,y)
+        return round(x),round(y)#x,y
 
 def recordmouse():#这对函数组合防止坐标错乱，必须在返回后再记录
     if variable_list['getmouse']:
@@ -799,35 +742,36 @@ def click(coordinates, times=1, cd=0.5, dbl=False, no_origin=False,no_return=Fal
     # 传入坐标元组 (x,y)
     x, y = coordinates
     
-    if not no_origin:
-        # 点击之前检测一次窗口坐标
-        get_origin()
-        refresh_images_path()
-        if variable_list['width'] ==1366:
-            x = origin[0] + x
-            y = origin[1] + y
-        elif variable_list['width'] ==1280:#版本2
-            x = origin[0] + (x*1280/1365) #1280/1364<k<1280/1364
-            y = origin[1] + (y*(720)/770)+1 #750/770<k<720/769
-        elif variable_list['width'] ==1600:
-            # x = origin[0] + ((x-18)*1347/1149)+21 #
-            x = origin[0] + (x*1600/1370)+3  #1600/1369
-            y = origin[1] + (y)*899/767
+    # if not no_origin:
+    #     # 点击之前检测一次窗口坐标
+    #     get_origin()
+    #     refresh_images_path()
+    #     if variable_list['width'] ==1366:
+    #         x = origin[0] + x
+    #         y = origin[1] + y
+    #     elif variable_list['width'] ==1280:#版本2
+    #         x = origin[0] + (x*1280/1365) #1280/1364<k<1280/1364
+    #         y = origin[1] + (y*(720)/770)+1 #750/770<k<720/769
+    #     elif variable_list['width'] ==1600:
+    #         # x = origin[0] + ((x-18)*1347/1149)+21 #
+    #         x = origin[0] + (x*1600/1370)+3  #1600/1369
+    #         y = origin[1] + (y)*899/767
     
-    elif no_origin==True:
-        pass
-    else:#以x，y为原点
-        if variable_list['width'] ==1366:
-            x = no_origin[0] + x
-            y = no_origin[1] + y
-        elif variable_list['width'] ==1280:#版本2
-            x = x + (no_origin[0]*1280/1365) #1280/1364<k<1280/1364
-            y = y + (no_origin[1]*(720)/770)+1 #750/770<k<720/769
-        elif variable_list['width'] ==1600:
-            # x = origin[0] + ((x-18)*1347/1149)+21 #
-            x = x + (no_origin[0]*1600/1370)+3  #1600/1369
-            y = y + (no_origin[1])*899/767
-    
+    # elif no_origin==True:
+    #     pass
+    # else:#以x，y为原点
+    #     if variable_list['width'] ==1366:
+    #         x = no_origin[0] + x
+    #         y = no_origin[1] + y
+    #     elif variable_list['width'] ==1280:#版本2
+    #         x = x + (no_origin[0]*1280/1365) #1280/1364<k<1280/1364
+    #         y = y + (no_origin[1]*(720)/770)+1 #750/770<k<720/769
+    #     elif variable_list['width'] ==1600:
+    #         # x = origin[0] + ((x-18)*1347/1149)+21 #
+    #         x = x + (no_origin[0]*1600/1370)+3  #1600/1369
+    #         y = y + (no_origin[1])*899/767
+    get_origin()
+    x,y=tranposition(x,y,no_origin=no_origin)#改版
     for i in range(times):
         
         t = 2 if dbl else 1

@@ -28,13 +28,13 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='BTD6多功能脚本-win7兼容版',#文件名字
+    name='BTD6多功能脚本免费版',#文件名字
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,#打包的时候是否进行压缩
     upx_exclude=[],
-    runtime_tmpdir=".\Temp",#临时目录的路径
+    runtime_tmpdir=".\Temp(临时文件请自己删除)",#临时目录的路径
     # runtime_tmpdir=None,
     console=True,#制定可执行程序执行时显示控制台窗口
     disable_windowed_traceback=False,
