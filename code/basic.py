@@ -281,40 +281,66 @@ variable_list={#初始化变量
 image_path={
 }
 
+# def refresh_images_path():
+#     image_path['upgrade']= 'images/%s/upgrade.png'%variable_list['width'] # '升级' 字体, 不过有时候识别不出来
+#     image_path['monkey_book']= 'images/%s/monkey_book.png'%variable_list['width']  # 升级时的猴子书 图标 检测升级用
+#     image_path['local_record']= 'images/%s/local_record.png'%variable_list['width']  # 升级时的猴子书 图标 检测升级用
+#     image_path['fail']= 'images/%s/fail.png'%variable_list['width']  # 失败图标
+#     image_path['restart']= 'images/%s/restart.png'%variable_list['width']  # 重新开始图标
+#     image_path['continue']= 'images/%s/continue.png'%variable_list['width']  # 后点击了浏览地图后的图标
+#     image_path['insta']= 'images/%s/insta.png'%variable_list['width']  # 困难刷完之后会先弹insta猴子的图标 识别点击
+#     image_path['next_page']= 'images/%s/next_page.png'%variable_list['width']  # insta点击完成是 下一页
+#     image_path['cover']= 'images/%s/cover.png'%variable_list['width']  # 初次运行时有覆盖存档
+
+#     #收集
+#     image_path['collected']= 'images/%s/collected.png'%variable_list['width']
+#     image_path['collection_button']= 'images/%s/collection_button.png'%variable_list['width']
+#     image_path['social']= 'images/%s/social.png'%variable_list['width']  # 主页面的社交字体 用于检测是否回到了主页面
+#     image_path['social_full']= 'images/%s/social_full.png'%variable_list['width']  # 主页面的社交字体 用于检测是否回到了主页面
+#     image_path['blue']= 'images/%s/box_blue.png'%variable_list['width']
+#     image_path['instawanted']= 'images/%s/instawanted.png'%variable_list['width']
+#     image_path['instawanted2']= 'images/%s/instawanted2.png'%variable_list['width']
+#     image_path['instawanted3']= 'images/%s/instawanted3.png'%variable_list['width']
+
+
+#     image_path['extra']= 'images/%s/extra.png'%variable_list['width']
+#     image_path['goldbloon']= 'images/%s/gold.png'%variable_list['width']
+
+#     image_path['sale']= 'images/%s/sale.png'%variable_list['width']
+#     # 用于识别第一页还是第二页
+#     image_path['exit_cancel']= 'images/%s/exit_game.png'%variable_list['width']
+#     image_path['insta_4']= 'images/%s/insta_4.png'%variable_list['width']
+#     image_path['insta_5']= 'images/%s/insta_5.png'%variable_list['width']
+#     #移除障碍物
+#     image_path['confirm']= 'images/%s/confirm.png'%variable_list['width']
+#     image_path['tab_button']= 'images/%s/tab_button.png'%variable_list['width']
+image_originpath=['unclear','home','cancel','upgrade','monkey_book','local_record','fail','restart','continue','insta','restart','continue','insta','next_page','cover','freegame','collected','collection_button','social','social_full','blue','instawanted','instawanted2','instawanted3','extra','goldbloon','sale','exit_cancel','insta_4','insta_5','confirm','tab_button',
+                  
+                  ]#以后打算自动获取
+
+def get_resource_path(relative_path):#
+    '''访问生成的临时文件夹的文件'''
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
+import cv2
+
+def cv_imread(file_path):#用此方法来读取带中文路径的图片
+    root_dir, file_name = os.path.split(file_path)
+    pwd = os.getcwd()
+    if root_dir:
+        os.chdir(root_dir)
+    cv_img = cv2.imread(file_name)
+    os.chdir(pwd)
+    return cv_img
+
 def refresh_images_path():
-    image_path['upgrade']= 'images/%s/upgrade.png'%variable_list['width'] # '升级' 字体, 不过有时候识别不出来
-    image_path['monkey_book']= 'images/%s/monkey_book.png'%variable_list['width']  # 升级时的猴子书 图标 检测升级用
-    image_path['local_record']= 'images/%s/local_record.png'%variable_list['width']  # 升级时的猴子书 图标 检测升级用
-    image_path['fail']= 'images/%s/fail.png'%variable_list['width']  # 失败图标
-    image_path['restart']= 'images/%s/restart.png'%variable_list['width']  # 重新开始图标
-    image_path['continue']= 'images/%s/continue.png'%variable_list['width']  # 后点击了浏览地图后的图标
-    image_path['insta']= 'images/%s/insta.png'%variable_list['width']  # 困难刷完之后会先弹insta猴子的图标 识别点击
-    image_path['next_page']= 'images/%s/next_page.png'%variable_list['width']  # insta点击完成是 下一页
-    image_path['cover']= 'images/%s/cover.png'%variable_list['width']  # 初次运行时有覆盖存档
-
-    #收集
-    image_path['collected']= 'images/%s/collected.png'%variable_list['width']
-    image_path['collection_button']= 'images/%s/collection_button.png'%variable_list['width']
-    image_path['social']= 'images/%s/social.png'%variable_list['width']  # 主页面的社交字体 用于检测是否回到了主页面
-    image_path['social_full']= 'images/%s/social_full.png'%variable_list['width']  # 主页面的社交字体 用于检测是否回到了主页面
-    image_path['blue']= 'images/%s/box_blue.png'%variable_list['width']
-    image_path['instawanted']= 'images/%s/instawanted.png'%variable_list['width']
-    image_path['instawanted2']= 'images/%s/instawanted2.png'%variable_list['width']
-    image_path['instawanted3']= 'images/%s/instawanted3.png'%variable_list['width']
-
-
-    image_path['extra']= 'images/%s/extra.png'%variable_list['width']
-    image_path['goldbloon']= 'images/%s/gold.png'%variable_list['width']
-
-    image_path['sale']= 'images/%s/sale.png'%variable_list['width']
-    # 用于识别第一页还是第二页
-    image_path['exit_cancel']= 'images/%s/exit_game.png'%variable_list['width']
-    image_path['insta_4']= 'images/%s/insta_4.png'%variable_list['width']
-    image_path['insta_5']= 'images/%s/insta_5.png'%variable_list['width']
-    #移除障碍物
-    image_path['confirm']= 'images/%s/confirm.png'%variable_list['width']
-    image_path['tab_button']= 'images/%s/tab_button.png'%variable_list['width']
-
+    def defimages_path(path):
+        image_path[path]=cv_imread(get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path)))
+        # print(cv_imread(get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path))))
+    for path in image_originpath:
+        defimages_path(path)
 
 
 # 存储需要用的模块
@@ -441,25 +467,35 @@ try:
     skill1=eval(conf.get("skill","top"))
     skill2=eval(conf.get("skill","middle"))
     skill3=eval(conf.get("skill","buttom"))
-
-    忍者猴=eval(conf.get("monkey","忍者猴"))
+    #需要补充
     英雄=eval(conf.get("monkey","英雄"))
-    潜艇=eval(conf.get("monkey","潜艇"))
-    海盗=eval(conf.get("monkey","海盗"))
-    猴村=eval(conf.get("monkey","猴村"))
-    皇家飞行员=eval(conf.get("monkey","飞行员"))
-    直升机飞行员=eval(conf.get("monkey","直升机"))
-    炼金术士=eval(conf.get("monkey","炼金"))
-    德鲁伊=eval(conf.get("monkey","格鲁伊"))
-    法师=eval(conf.get("monkey","法师"))
-    毛毛=eval(conf.get("monkey","毛毛"))
-    狙击手=eval(conf.get("monkey","狙击手"))
+
+    飞镖猴=eval(conf.get("monkey","飞镖猴"))
+    回旋镖猴=eval(conf.get("monkey","回旋镖猴"))
+    大炮=eval(conf.get("monkey","大炮"))
+    图钉塔=eval(conf.get("monkey","图钉塔"))
     冰猴=eval(conf.get("monkey","冰猴"))
-    刺钉塔=eval(conf.get("monkey","刺钉塔"))
-    胶水=eval(conf.get("monkey","胶水"))
-    小刺钉=eval(conf.get("monkey","小刺钉"))
+    胶水炮手=eval(conf.get("monkey","胶水炮手"))
+
+    狙击手猴=eval(conf.get("monkey","狙击手猴"))
+    猴子潜艇=eval(conf.get("monkey","猴子潜艇"))
+    海盗猴=eval(conf.get("monkey","海盗猴"))
+    皇家飞行员=eval(conf.get("monkey","皇家飞行员"))
+    直升机飞行员=eval(conf.get("monkey","直升机飞行员"))
+    迫击炮猴=eval(conf.get("monkey","迫击炮猴"))
+    机枪猴=eval(conf.get("monkey","机枪猴"))
+
+    法师猴=eval(conf.get("monkey","法师猴"))
+    超猴侠=eval(conf.get("monkey","超猴侠"))
+    忍者猴=eval(conf.get("monkey","忍者猴"))
+    炼金术士=eval(conf.get("monkey","炼金术士"))
+    德鲁伊=eval(conf.get("monkey","格鲁伊"))
+    
+    香蕉农场=eval(conf.get("monkey","香蕉农场"))
+    工程师猴=eval(conf.get("monkey","工程师猴"))
     刺钉工厂=eval(conf.get("monkey","刺钉工厂"))
-except Exception as e:
+    猴子村=eval(conf.get("monkey","猴子村"))
+except Exception as e:#这个和excpt是有区别的 用except会出问题
     pass
 
 
