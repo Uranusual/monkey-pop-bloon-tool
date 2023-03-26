@@ -41,7 +41,7 @@
 
 | 免费版                                                                                                | vip版 (q群更新)  | svip版 (开发中) |
 | ----------------------------------------------------------------------------------------------------- | ---------------- | --------------- |
-| [安装](https://fastly.jsdelivr.net/gh/the1812/Bilibili-Evolved@master-cdn/dist/bilibili-evolved.user.js) | 贡献后入主群获取 | 暂无            |
+| [下载](https://github.com/Uranusual/monkey-pop-bloon-tool/releases) | 贡献后入主群获取 | 暂无            |
 
 > q群709918803-[【猴子打气球6脚本子群】](https://jq.qq.com/?_wv=1027&k=Z9kt5FSw)
 

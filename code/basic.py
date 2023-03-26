@@ -1,4 +1,17 @@
-
+import ctypes#C语言类型
+import sys
+def is_admin():#win7兼容性版本，管理员模式运行会有生成临时文件，结束程序却没有删除的bug，放在开始可以提高运行效率
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+if is_admin():
+    print("已使用管理员权限运行脚本，使用win7版会出现生成临时文件，程序结束却没删除的bug")
+    # 将要运行的代码加到这里
+else:
+    print("未使用管理员权限运行脚本，保证点击时不被自己鼠标干扰请获取权限")
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+    sys.exit(0)
 
 # 存储初始化变量
 signal_blocking = [] 
@@ -344,7 +357,7 @@ def refresh_images_path():
 
 
 # 存储需要用的模块
-import ctypes#C语言类型
+# import ctypes#C语言类型
 import win32gui#界面
 import ctypes.wintypes
 user32=ctypes.windll.user32
@@ -813,6 +826,7 @@ def click(coordinates, times=1, cd=0.5, dbl=False, no_origin=False,no_return=Fal
         t = 2 if dbl else 1
         windll.LoadLibrary("C:\\Windows\\System32\\user32.dll").BlockInput(1)#屏蔽鼠标键盘操作
         pyautogui.click(x=x, y=y, clicks=t, button='left')
+        time.sleep(0.01)
         windll.LoadLibrary("C:\\Windows\\System32\\user32.dll").BlockInput(0)#开启鼠标键盘操作#会导致继续要开2次，按键才生效
         #这个用的是向小取整，所以变化的坐标偶尔会往左上偏
         

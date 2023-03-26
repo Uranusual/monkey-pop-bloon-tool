@@ -22,26 +22,26 @@
 - [目录](#目录)
 - [一-下载](#一-下载)
 - [二-使用准备](#二-使用准备)
-    - [1-游戏设置](#1-游戏设置)
-    - [2-系统设置](#2-系统设置)
+  - [1-游戏设置](#1-游戏设置)
+  - [2-系统设置](#2-系统设置)
 - [三-使用方法及功能](#三-使用方法及功能)
-    - [1-使用方法：](#1-使用方法)
-    - [2-功能及使用说明：](#2-功能及使用说明)
+  - [1-使用方法：](#1-使用方法)
+  - [2-功能及使用说明：](#2-功能及使用说明)
 - [四-设置](#四-设置)
 - [五-注意事项](#五-注意事项)
 - [六-疑惑解答](#六-疑惑解答)
-    - [1-运行出错解答](#1-运行出错解答)
-        - [其他小问题](#其他小问题)
-    - [2-兼容性](#2-兼容性)
+  - [1-运行出错解答](#1-运行出错解答)
+    - [其他小问题](#其他小问题)
+  - [2-兼容性](#2-兼容性)
 - [七-自定义打法](#七-自定义打法)
 - [八-版本历史与更新日志](#八-版本历史与更新日志)
 - [九-隐私声明](#九-隐私声明)
 
 # 一-下载
 
-| 免费版                                                                                                | vip版 (q群更新)  | svip版 (开发中) |
-| ----------------------------------------------------------------------------------------------------- | ---------------- | --------------- |
-| [安装](https://fastly.jsdelivr.net/gh/the1812/Bilibili-Evolved@master-cdn/dist/bilibili-evolved.user.js) | 贡献后入主群获取 | 暂无            |
+| 免费版                                                           | vip版 (q群更新)  | svip版 (开发中) |
+| ---------------------------------------------------------------- | ---------------- | --------------- |
+| [下载](https://github.com/Uranusual/monkey-pop-bloon-tool/releases) | 贡献后入主群获取 | 暂无            |
 
 > q群709918803-[【猴子打气球6脚本子群】](https://jq.qq.com/?_wv=1027&k=Z9kt5FSw)
 
@@ -50,20 +50,24 @@
 ### 1-游戏设置
 
 1.在游戏中点击设置选项
-[![游戏设置1](instruction/images/gamesetting1.png "第一步")](https://markdown.com.cn) <!-- [![图片未加载显示的名字](图片路径 "悬浮到图片显示的信息")](图片在线地址)-->
-2.将游戏尺寸设置为脚本可以用的3中游戏尺寸中的一![1679477775080](image/使用说明/1679477775080.png)，并取消全屏的勾选，1366x768,1280x720,1600x900中的一种，优先使用1366x768
+[![游戏设置1](instruction/images/gamesetting1.png "第一步")](https://markdown.com.cn) `<!-- [![图片未加载显示的名字](图片路径 "悬浮到图片显示的信息")](图片在线地址)-->`
+2.将游戏尺寸设置为脚本可以用的3中游戏尺寸中的一种，并取消全屏的勾选，1366x768,1280x720,1600x900中的一种，优先使用1366x768
+[![游戏设置1](instruction/images/gamesetting1.png "第一步")](https://markdown.com.cn)
+
 <!-- [![游戏设置2](\instruction\images\gamesetting2.png "第二步")](https://markdown.com.cn) -->
-<!-- 上面那个(\开头的")格式有些markdown软件不显示 -->
+
+<!-- 上面那个(\开头的和\路径的")格式有些markdown软件或在github不显示 -->
+
 3.对游戏进行设置，确保脚本的游戏操作正常运行
-[![游戏设置3](instruction\images\gamesetting3.png "第三步")](https://markdown.com.cn)
+[![游戏设置3](instruction/images/gamesetting3.png "第三步")](https://markdown.com.cn)
 4.对游戏热键进行设置，确保脚本的按键操作有效，最好是用恢复默认
-[![游戏设置4](instruction\images\gamesetting4.png "第四步")](https://markdown.com.cn)
+[![游戏设置4](instruction/images/gamesetting4.png "第四步")](https://markdown.com.cn)
 
 ### 2-系统设置
 
-[![系统设置1](instruction\images\systemsetting1.png "第一步")](https://markdown.com.cn)
-[![系统设置2](instruction\images\systemsetting2.png "第二步")](https://markdown.com.cn)
-[![系统设置3](instruction\images\systemsetting3.png "特殊设置")](https://markdown.com.cn)
+[![系统设置1](instruction/images/systemsetting1.png "第一步")](https://markdown.com.cn)
+[![系统设置2](instruction/images/systemsetting2.png "第二步")](https://markdown.com.cn)
+[![系统设置3](instruction/images/systemsetting3.png "特殊设置")](https://markdown.com.cn)
 这些设置改动后最好是重新启动一下电脑
 游戏尺寸和系统设置不对，打开脚本识别的游戏尺寸不对，脚本会闪退
 
