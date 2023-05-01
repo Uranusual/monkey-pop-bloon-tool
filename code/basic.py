@@ -294,40 +294,7 @@ variable_list={#初始化变量
 image_path={
 }
 
-# def refresh_images_path():
-#     image_path['upgrade']= 'images/%s/upgrade.png'%variable_list['width'] # '升级' 字体, 不过有时候识别不出来
-#     image_path['monkey_book']= 'images/%s/monkey_book.png'%variable_list['width']  # 升级时的猴子书 图标 检测升级用
-#     image_path['local_record']= 'images/%s/local_record.png'%variable_list['width']  # 升级时的猴子书 图标 检测升级用
-#     image_path['fail']= 'images/%s/fail.png'%variable_list['width']  # 失败图标
-#     image_path['restart']= 'images/%s/restart.png'%variable_list['width']  # 重新开始图标
-#     image_path['continue']= 'images/%s/continue.png'%variable_list['width']  # 后点击了浏览地图后的图标
-#     image_path['insta']= 'images/%s/insta.png'%variable_list['width']  # 困难刷完之后会先弹insta猴子的图标 识别点击
-#     image_path['next_page']= 'images/%s/next_page.png'%variable_list['width']  # insta点击完成是 下一页
-#     image_path['cover']= 'images/%s/cover.png'%variable_list['width']  # 初次运行时有覆盖存档
-
-#     #收集
-#     image_path['collected']= 'images/%s/collected.png'%variable_list['width']
-#     image_path['collection_button']= 'images/%s/collection_button.png'%variable_list['width']
-#     image_path['social']= 'images/%s/social.png'%variable_list['width']  # 主页面的社交字体 用于检测是否回到了主页面
-#     image_path['social_full']= 'images/%s/social_full.png'%variable_list['width']  # 主页面的社交字体 用于检测是否回到了主页面
-#     image_path['blue']= 'images/%s/box_blue.png'%variable_list['width']
-#     image_path['instawanted']= 'images/%s/instawanted.png'%variable_list['width']
-#     image_path['instawanted2']= 'images/%s/instawanted2.png'%variable_list['width']
-#     image_path['instawanted3']= 'images/%s/instawanted3.png'%variable_list['width']
-
-
-#     image_path['extra']= 'images/%s/extra.png'%variable_list['width']
-#     image_path['goldbloon']= 'images/%s/gold.png'%variable_list['width']
-
-#     image_path['sale']= 'images/%s/sale.png'%variable_list['width']
-#     # 用于识别第一页还是第二页
-#     image_path['exit_cancel']= 'images/%s/exit_game.png'%variable_list['width']
-#     image_path['insta_4']= 'images/%s/insta_4.png'%variable_list['width']
-#     image_path['insta_5']= 'images/%s/insta_5.png'%variable_list['width']
-#     #移除障碍物
-#     image_path['confirm']= 'images/%s/confirm.png'%variable_list['width']
-#     image_path['tab_button']= 'images/%s/tab_button.png'%variable_list['width']
-image_originpath=['unclear','home','cancel','upgrade','monkey_book','local_record','fail','restart','continue','insta','restart','continue','insta','next_page','cover','freegame','collected','collection_button','social','social_full','blue','instawanted','instawanted2','instawanted3','extra','goldbloon','sale','exit_cancel','insta_4','insta_5','confirm','tab_button',
+image_originpath=['unclear','home','cancel','upgrade','monkey_book','local_record','fail','restart','continue','insta','restart','continue','insta','next_page','cover','freegame','collected','collection_button','social','social_full','box','instawanted','instawanted2','instawanted3','extra','goldbloon','sale','exit_cancel','insta_4','insta_5','confirm','tab_button',
                   
                   ]#以后打算自动获取
 
@@ -2308,7 +2275,7 @@ def collect_chain():
         # # 刚返回的时候, 在主页面的, 要稍等一会才加载活动页面, 不用了上面有睡眠
         
         if i > 15:
-            click(global_point_map['home_empty4'], times=2, cd=2)
+            click(global_point_map['home_empty4'], times=2, cd=1)
 
 
 
@@ -2375,7 +2342,7 @@ def collect_chain():
 
         
         try:
-            location = pyautogui.locateOnScreen(image=image_path['blue'], confidence=0.8, grayscale=True)
+            location = pyautogui.locateOnScreen(image=image_path['box'], confidence=0.8, grayscale=True)
             x, y = pyautogui.center(location)
             print('[%s]图片识别到 insta盲盒, 坐标: %s, %s' % (get_datetime(), x, y))
             # 点击第一次开箱
