@@ -347,7 +347,7 @@ from chains_map import *
 import pyautogui#这个库会影响到获取应用缩放
 
 import pymem
-
+import win32con
 
 
 
@@ -642,64 +642,123 @@ def var_name(var,all_var=locals()):
 
 
 
-def get_origin(is_init=False):
-    global origin
-    scale=variable_list['scale']
-    # print(scale)
-    if scale==1:
-        p=8
-    elif scale==1.25:
-        p=9
-    elif scale==1.5:
-        p=11
-    elif scale==1.75:
-        p=12
-    elif scale==2.25:
-        p=14
-    else:
-        p=int(5+scale*4)
-        print('你当前电脑的应用缩放，脚本未做匹配可能会出现问题，请使用常规的应用缩放')
-    # print(p)
-    while True:
-        if win32gui.FindWindow(None, "BloonsTD6")==0 and win32gui.FindWindow(None, "BloonsTD6-Epic")==0:
-            l, t, r, b =0,0,0,0
-        elif win32gui.FindWindow(None, "BloonsTD6-Epic")!=0:
-            l, t, r, b = win32gui.GetWindowRect(win32gui.FindWindow(None, "BloonsTD6-Epic"))
-        else:
-            l, t, r, b = win32gui.GetWindowRect(win32gui.FindWindow(None, "BloonsTD6"))
+# def get_origin(is_init=False):
+#     global origin
+#     scale=variable_list['scale']
+#     # print(scale)
+#     if scale==1:
+#         p=8
+#     elif scale==1.25:
+#         p=9
+#     elif scale==1.5:
+#         p=11
+#     elif scale==1.75:
+#         p=12
+#     elif scale==2.25:
+#         p=14
+#     else:
+#         p=int(5+scale*4)
+#         print('你当前电脑的应用缩放，脚本未做匹配可能会出现问题，请使用常规的应用缩放')
+#     # print(p)
+#     while True:
+#         if win32gui.FindWindow(None, "BloonsTD6")==0 and win32gui.FindWindow(None, "BloonsTD6-Epic")==0:
+#             l, t, r, b =0,0,0,0
+#         elif win32gui.FindWindow(None, "BloonsTD6-Epic")!=0:
+#             l, t, r, b = win32gui.GetWindowRect(win32gui.FindWindow(None, "BloonsTD6-Epic"))
+#         else:
+#             l, t, r, b = win32gui.GetWindowRect(win32gui.FindWindow(None, "BloonsTD6"))
 
 
-        variable_list['width']=r-l-2*p
-        if variable_list['width']==1366:
-            coordinates = [l+p, b - 768-p] #之前的坐标都少往左边偏，这是1920*1080 100%缩放
-        else:
-            coordinates = [l+p, b - variable_list['width']*9/16-p]
+#         variable_list['width']=r-l-2*p
+#         if variable_list['width']==1366:
+#             coordinates = [l+p, b - 768-p] #之前的坐标都少往左边偏，这是1920*1080 100%缩放
+#         else:
+#             coordinates = [l+p, b - variable_list['width']*9/16-p]
 
 
-        if coordinates[0] <10 and coordinates[1] < 0:
-            print('[%s]获取原点坐标失败,可能是窗口最小化,请打开游戏窗口' % get_datetime())
-            # time.sleep(1)
-            # # 暂停脚本
-            # signal_blocking.clear()
-            # signal_blocking.append(time.time())
-            if not is_init:
-                break
+#         if coordinates[0] <10 and coordinates[1] < 0:
+#             print('[%s]获取原点坐标失败,可能是窗口最小化,请打开游戏窗口' % get_datetime())
+#             # time.sleep(1)
+#             # # 暂停脚本
+#             # signal_blocking.clear()
+#             # signal_blocking.append(time.time())
+#             if not is_init:
+#                 break
 
-        else:
-            # if is_init:
-            #     print('[%s]获取原点坐标成功: %s' % (get_datetime(), coordinates))
-            # else:
-            #     if coordinates[0] != origin[0] or coordinates[1] != origin[1]:
-            #         # print('[%s]检测到窗口移动,更新游戏画面原点坐标: %s, 窗口边框高度: %s' % (get_datetime(), coordinates, int(deviation)))
-            #         print("[%s]检验的游戏画面宽度为: %s"% (get_datetime(),variable_list['width']),
-            #         # '如果不是1366*768的游戏尺寸,请更换图片或游戏尺寸',
-            #         '如果不是游戏的尺寸，则修改显示器分辨率或者应用缩放'
-            #         )
+#         else:
+#             # if is_init:
+#             #     print('[%s]获取原点坐标成功: %s' % (get_datetime(), coordinates))
+#             # else:
+#             #     if coordinates[0] != origin[0] or coordinates[1] != origin[1]:
+#             #         # print('[%s]检测到窗口移动,更新游戏画面原点坐标: %s, 窗口边框高度: %s' % (get_datetime(), coordinates, int(deviation)))
+#             #         print("[%s]检验的游戏画面宽度为: %s"% (get_datetime(),variable_list['width']),
+#             #         # '如果不是1366*768的游戏尺寸,请更换图片或游戏尺寸',
+#             #         '如果不是游戏的尺寸，则修改显示器分辨率或者应用缩放'
+#             #         )
 
-            origin.clear()
-            origin.extend(coordinates)
+#             origin.clear()
+#             origin.extend(coordinates)
     
-            break
+#             break
+
+def get_origin(is_init=False):#初始化不要了
+    global origin
+    # scale=variable_list['scale']##老旧坐标获取（弃了）
+    # # print(scale)
+
+    # if scale==1:#根据应用缩放偏移坐标#这个目前没问题
+    #     p=8
+    # elif scale==1.25:
+    #     p=9
+    # elif scale==1.5:#貌似这个有问题
+    #     p=11
+    # elif scale==1.75:
+    #     p=12
+    # elif scale==2.25:
+    #     p=14
+    # else:
+    #     p=int(5+scale*4)
+    #     print('你当前电脑的应用缩放，脚本未做匹配可能会出现问题，请使用常规的应用缩放')
+    if win32gui.FindWindow(None, "BloonsTD6")==0 and win32gui.FindWindow(None, "BloonsTD6-Epic")==0:
+        # print('未检测到游戏窗口，请打开游戏')
+        l, t, r, b =0,0,0,0
+        variable_list['hwnd']=False
+        print('[%s] 游戏未打开，请打开游戏后，按ctrl+d继续脚本' % get_datetime())
+        signal_blocking.clear()
+        signal_blocking.append(time.time())
+    elif win32gui.FindWindow(None, "BloonsTD6-Epic")!=0:
+        variable_list['hwnd'] = win32gui.FindWindow(None, "BloonsTD6-Epic")
+        l, t, r, b = win32gui.GetWindowRect(win32gui.FindWindow(None, "BloonsTD6-Epic"))
+    else:
+        variable_list['hwnd'] = win32gui.FindWindow(None, "BloonsTD6")
+        l, t, r, b = win32gui.GetWindowRect(win32gui.FindWindow(None, "BloonsTD6"))
+    win32gui.ShowWindow(variable_list['hwnd'], win32con.SW_SHOWNORMAL)#打开游戏窗口
+
+
+    
+    if r-l>=1362 and r-l<=1500:
+        variable_list['width']=1366
+        coordinates = [l+(r-l-1366)/2, b - 768-(r-l-1366)/2]
+    elif r-l>=1270 and r-l<1400:
+        variable_list['width']=1280
+        coordinates = [l+(r-l-1280)/2, b - variable_list['width']*9/16-(r-l-1280)/2]
+    elif r-l>=1590 and r-l<=1800:
+        variable_list['width']=1600
+        coordinates = [l+(r-l-1600)/2, b - variable_list['width']*9/16-(r-l-1600)/2]
+    else:
+        # print('[%s]检测到你的游戏宽度为%s 脚本未适配你使用的游戏尺寸' % (get_datetime(),r-l))
+        variable_list['width']=r-l-2*8
+        coordinates = [l+8, b - variable_list['width']*9/16-8]
+    # variable_list['width']=r-l-2*p##老旧坐标获取（弃了）
+    # if variable_list['width']==1366:
+    #     coordinates = [l+p, b - 768-p] #之前的坐标都少往左边偏，这是1920*1080 100%缩放
+    # else:
+    #     coordinates = [l+p, b - variable_list['width']*9/16-p]
+
+    origin.clear()
+    origin.extend(coordinates)
+
+
 
 def tranposition(x,y,no_origin=False):#转化坐标单独弄出来，因为不只点击需要用到想到坐标
     if not no_origin:
