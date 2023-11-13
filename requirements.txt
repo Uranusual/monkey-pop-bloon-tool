@@ -1,0 +1,4 @@
+PyAutoGUI==0.9.54
+Pymem==1.13.0
+pynput==1.7.6
+pywin32==306

@@ -11,6 +11,7 @@ pyautogui.FAILSAFE = False
 
 
 def exec_imp_chain():
+    variable_list['debug']=False
     script_mode = 'onecircle'
     global queue_infos
     print("========================================================\n"
@@ -81,6 +82,9 @@ def exec_imp_chain():
 
         if event in [-12, -10, -9, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]:
             break
+        if event == 90:
+            variable_list['debug'] = True
+            print('进入debug显示模式')
         elif event in [-11, ]:
             print('生成热键设置.ini,修改后重启生效,：如果修改文件后脚本没改就是改错内容了')
             if not os.path.isfile('热键设置.ini'):
@@ -231,11 +235,20 @@ def exec_imp_chain():
     elif event == 0:
         while True:
             needmap = input('请输入你要循环刷的图：')
-            if needmap in all_chains:
-                needmode = input('请输入地图模式：')
-                if needmode in all_chains[needmap]:
-                    break
-            print('你输入的名称有误，或者脚本未收录对应打法')
+            if needmap in map_info:#模式名称输入正确
+                if needmap in all_chains:
+                    needmode = input('请输入地图模式：')
+                    if needmode in mode_click:#模式名称输入正确
+
+                        if needmode in all_chains[needmap]:
+                            break
+                        else:
+                            print('你输入的打法免费版不提供,如有需求请用vip版')
+                    else:
+                        print('你输入的模式名称有误')
+            else:
+                print('你输入的地图名称有误')
+
 
     elif event == 1:
         print('即将循环刷专家放气，只要黑暗城堡放气解锁即可')
@@ -274,6 +287,7 @@ def exec_imp_chain():
 
     elif event == 20:
         variable_list['script_mode'] = '刷金气球'
+        print('刷金气球模式已在免费版失效,想使用更多内容请用vip版')
         print('即将进入刷金气球模式')
         print('将选择英雄萨乌达')
 

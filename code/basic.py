@@ -32,14 +32,24 @@ global_point_map = {
     'map_select':[800,471-32],
     'map_sauda':[77,701],
     '任意英雄':[1364, 406],
-    '艾蒂安':[291,603-32],
-    '灵机':[182,684],
     '昆西':[77,159],
-    '奥本':[73, 291],
     '格温多琳':[175,154],
-    '萨乌达':[77,701],
-    '帕特':[286,427],
-    '布里克尔':[179,573],
+    '琼斯':[291,154],
+
+    '奥本':[73, 291],
+    '丘吉尔':[175,291],
+    '本杰明':[291,291],
+
+    '艾泽里':[77,427],  
+    '帕特':[175,427],
+    '阿拉多':[286,427],
+
+    '布里克尔':[77,573],   
+    '艾蒂安':[179,603-32],
+    '萨乌达':[291,573],
+
+    '灵机':[77,701],
+    '杰拉尔多':[175,701],
 
     'map_select':[800,471-32],
     'map_heroback':[53,71-32],
@@ -188,23 +198,24 @@ map_area={#地图页数点位
 
 map_info={
     '猴子草甸': ['1', 'map_1',],
-    '树桩': ['1', 'map_2',],
-    '市中心': ['1', 'map_3',],
-    '道路中间': ['1', 'map_4',],
-    '一二三': ['1', 'map_5',],
-    '废料场': ['1', 'map_6',],
-    '小木屋': ['2', 'map_1',],
-    '度假胜地': ['2', 'map_2',],
-    '溜冰鞋': ['2', 'map_3',],
-    '莲花岛': ['2', 'map_4',],
-    '糖果瀑布': ['2', 'map_5',],
-    '冬季公园': ['2', 'map_6',],
+    '循环': ['1', 'map_2',],
+    '道路中间': ['1', 'map_3',],
+    '树桩': ['1', 'map_4',],
+    '市中心': ['1', 'map_5',],
+    '一二三': ['1', 'map_6',],
+    
+    '废料场': ['2', 'map_1',],
+    '小木屋': ['2', 'map_2',],
+    '度假胜地': ['2', 'map_3',],
+    '溜冰鞋': ['2', 'map_4',],
+    '莲花岛': ['2', 'map_5',],
+    '糖果瀑布': ['2', 'map_6',],
 
-    '鬼脸南瓜': ['3', 'map_1',],
-    '公园路径': ['3', 'map_2',],
-    '高山竞速': ['3', 'map_3',],
-    '冰冻三尺': ['3', 'map_4',],
-    '循环': ['3', 'map_5',],
+    '冬季公园': ['3', 'map_1',],
+    '鬼脸南瓜': ['3', 'map_2',],
+    '公园路径': ['3', 'map_3',],
+    '高山竞速': ['3', 'map_4',],
+    '冰冻三尺': ['3', 'map_5',],
     '立体主义': ['3', 'map_6',],
 
     '四个圈子': ['4', 'map_1',],
@@ -212,46 +223,50 @@ map_info={
     '路的尽头': ['4', 'map_3',],
     '原木': ['4', 'map_4',],
 
+    #中级图
+    '水上乐园': ['5', 'map_1',],
+    '独眼巨人': ['5', 'map_2',],
+    '隐蔽的花园': ['5', 'map_3',],
+    '采石场': ['5', 'map_4',],
+    '静谧街道': ['5', 'map_5',],
+    '布隆纳留斯精英': ['5', 'map_6',],
 
-    '隐蔽的花园': ['5', 'map_1',],
-    '采石场': ['5', 'map_2',],
-    '静谧街道': ['5', 'map_3',],
-    '布隆纳留斯精英': ['5', 'map_4',],
-    '平衡': ['5', 'map_5',],
-    '已加密': ['5', 'map_6',],
+    '平衡': ['6', 'map_1',],
+    '已加密': ['6', 'map_2',],
+    '集市': ['6', 'map_3',],
+    '阿多拉神庙': ['6', 'map_4',],
+    '复活节春天': ['6', 'map_5',],
+    '飞镖卡丁车': ['6', 'map_6',],
 
-    '集市': ['6', 'map_1',],
-    '阿多拉神庙': ['6', 'map_2',],
-    '复活节春天': ['6', 'map_3',],
-    '飞镖卡丁车': ['6', 'map_4',],
-    '登月': ['6', 'map_5',],
-    '鬼屋': ['6', 'map_6',],
+    '登月': ['7', 'map_1',],
+    '鬼屋': ['7', 'map_2',],
+    '顺流而下': ['7', 'map_3',],
+    '靶场': ['7', 'map_4',],
+    '龟裂之地': ['7', 'map_5',],
+    '河床': ['7', 'map_6',],
 
-    '顺流而下': ['7', 'map_1',],
-    '靶场': ['7', 'map_2',],
-    '龟裂之地': ['7', 'map_3',],
-    '河床': ['7', 'map_4',],
-    '滑槽': ['7', 'map_5',],
-    '耙': ['7', 'map_6',],
-    '香料群岛': ['8', 'map_1',],
+    '滑槽': ['8', 'map_1',],
+    '耙': ['8', 'map_2',],
+    '香料群岛': ['8', 'map_3',],
     #高级图
-    '午夜豪宅': ['9', 'map_1',],
-    '凹陷的柱子': ['9', 'map_2',],
-    'x因子': ['9', 'map_3',],
-    '梅萨': ['9', 'map_4',],
-    '齿轮传动': ['9', 'map_5',],
-    '泄洪道': ['9', 'map_6',],
+    '黑暗之径': ['9', 'map_1',],
+    '侵蚀': ['9', 'map_2',],
+    '午夜豪宅': ['9', 'map_3',],
+    '凹陷的柱子': ['9', 'map_4',],
+    'x因子': ['9', 'map_5',],
+    '梅萨': ['9', 'map_6',],
 
+    '齿轮传动': ['10', 'map_1',],
+    '泄洪道': ['10', 'map_2',],
+    '货运': ['10', 'map_3',],
+    '帕特的池塘': ['10', 'map_4',],
+    '半岛': ['10', 'map_5',],
+    '高级金融': ['10', 'map_6',],
 
-    '货运': ['10', 'map_1',],
-    '帕特的池塘': ['10', 'map_2',],
-    '半岛': ['10', 'map_3',],
-    '高级金融': ['10', 'map_4',],
-    '另一块砖': ['10', 'map_5',],
-    '海岸': ['10', 'map_6',],
-
-    '玉米地': ['11', 'map_1',],
-    '地下': ['11', 'map_2',],
+    '另一块砖': ['11', 'map_1',],
+    '海岸': ['11', 'map_2',],
+    '玉米地': ['11', 'map_3',],
+    '地下': ['11', 'map_4',],
 
     '黑暗地下城': ['12', 'map_1',],
     '避难所': ['12', 'map_2',],
@@ -315,12 +330,25 @@ def cv_imread(file_path):#用此方法来读取带中文路径的图片
     os.chdir(pwd)
     return cv_img
 
+# def refresh_images_path():
+#     def defimages_path(path):
+#         image_path[path]=cv_imread(get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path)))
+#         # print(cv_imread(get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path))))
+#     for path in image_originpath:
+#         defimages_path(path)
 def refresh_images_path():
-    def defimages_path(path):
-        image_path[path]=cv_imread(get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path)))
-        # print(cv_imread(get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path))))
-    for path in image_originpath:
-        defimages_path(path)
+    try:
+        def defimages_path(path):
+                # image_path[path]=get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path))
+                image_path[path]=cv_imread(get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path)))
+                # image_path[path]='src\images\%s\%s.png'%(variable_list['width'],path)
+            # print(cv_imread(get_resource_path('src\images\%s\%s.png'%(variable_list['width'],path))))
+        for path in image_originpath:
+            defimages_path(path)
+    except Exception as e:
+            print('检测到的游戏宽度为：%s,脚本未对该游戏尺寸做匹配,请调整游戏尺寸'%variable_list['width'])
+            time.sleep(10)
+
 
 
 # 存储需要用的模块
@@ -346,7 +374,7 @@ import threading
 from chains_map import *
 import pyautogui#这个库会影响到获取应用缩放
 
-import pymem
+# import pymem
 import win32con
 
 
@@ -1276,36 +1304,36 @@ def get_page():
             return n
 
 
-def after_round(i,cd=0.5):
-    Game = pymem.Pymem("BloonsTD6") # 游戏进程
-    def Get_moduladdr(dll): # 读DLL模块基址
+# def after_round(i,cd=0.5):
+#     Game = pymem.Pymem("BloonsTD6") # 游戏进程
+#     def Get_moduladdr(dll): # 读DLL模块基址
         
-        modules = list(Game.list_modules()) # 列出exe的全部DLL模块
-        for module in modules:
-            if module.name == dll:
-                #print(module.name) # 模块名字
-                #print(module.lpBaseOfDll) # 模块基址
-                #print("找到了")
-                Moduladdr = module.lpBaseOfDll
-        return Moduladdr
-    DLL_addr = Get_moduladdr("GameAssembly.dll") # 读DLL模块基址
-    print('[%s]等到第%s回合执行操作' % (get_datetime(),i))
-    round_BASE_addr = Game.read_longlong(DLL_addr + 0x02F794c0)
-    while True:
-        time.sleep(cd)
-        try:
-            addr1 = Game.read_longlong(round_BASE_addr+ 0xB8)
-            addr2 = Game.read_longlong(addr1 + 0x0)
-            addr3 = Game.read_longlong(addr2 + 0x110)
-            addr4 = Game.read_longlong(addr3 + 0x78)
-            addr5 = Game.read_longlong(addr4 + 0x28)
-            addr6 = Game.read_longlong(addr5 + 0x40)
-            round = Game.read_int(addr6 + 0x20)
-            # print(round)
-            if round==i:
-                return True
-        except Exception as e:
-            print('[%s]未识别到回合数' % get_datetime())
+#         modules = list(Game.list_modules()) # 列出exe的全部DLL模块
+#         for module in modules:
+#             if module.name == dll:
+#                 #print(module.name) # 模块名字
+#                 #print(module.lpBaseOfDll) # 模块基址
+#                 #print("找到了")
+#                 Moduladdr = module.lpBaseOfDll
+#         return Moduladdr
+#     DLL_addr = Get_moduladdr("GameAssembly.dll") # 读DLL模块基址
+#     print('[%s]等到第%s回合执行操作' % (get_datetime(),i))
+#     round_BASE_addr = Game.read_longlong(DLL_addr + 0x02F794c0)
+#     while True:
+#         time.sleep(cd)
+#         try:
+#             addr1 = Game.read_longlong(round_BASE_addr+ 0xB8)
+#             addr2 = Game.read_longlong(addr1 + 0x0)
+#             addr3 = Game.read_longlong(addr2 + 0x110)
+#             addr4 = Game.read_longlong(addr3 + 0x78)
+#             addr5 = Game.read_longlong(addr4 + 0x28)
+#             addr6 = Game.read_longlong(addr5 + 0x40)
+#             round = Game.read_int(addr6 + 0x20)
+#             # print(round)
+#             if round==i:
+#                 return True
+#         except Exception as e:
+#             print('[%s]未识别到回合数' % get_datetime())
 
 def match_pixel(position,aru,threshold=10):#匹配判断像素点
     point2 = position[0]*variable_list['width'] / 1366, position[1]*variable_list['width']/1366
@@ -1597,9 +1625,15 @@ def get_level_info(mposition, check_times=0):
                 
                 continue
             
-            x, y = pyautogui.center(location)
+            x0, y0 = pyautogui.center(location)
+            if variable_list['debug']:
+                print('[%s]出售的屏幕坐标为[%s,%s]' % (get_datetime(),x0,y0))
+            if x0<0:
+                print('[%s]出售的屏幕坐标为[%s,%s],为负数,识图模块出错.未正确识别到位置,会导致升级出错请更换应用缩放或者显示器分辨率' % (get_datetime(),x0,y0))
+            if x0>0 and y0<0:
+                print('[%s]出售的屏幕坐标为[%s,%s],为负数,识图模块出错.未正确识别到位置,会导致升级出错请更换应用缩放或者显示器分辨率' % (get_datetime(),x0,y0))
             # print('[%s]获取猴子信息, 识别到出售图标' % get_datetime()
-            if (x - origin[0]) > 600:
+            if (x0 - origin[0]) > 600:
                 # 表示出售在右边
                 sale_position = 'right'
             
